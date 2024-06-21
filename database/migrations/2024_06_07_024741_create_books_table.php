@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('issue');
             $table->date('date_of_publish');
             $table->string('cover_url')->nullable();
-            // $table->foreignIdFor(\App\Models\User::class);
-            // $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignIdFor(\App\Models\User::class);
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

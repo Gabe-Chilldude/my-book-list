@@ -37,7 +37,7 @@
     </div>
 @endif
 
-<form action="/accounts/auth" method="post">
+<form action="/accounts/auth" method="POST">
     @csrf
     <label for="email">Email</label>
     <input type="email" name="email">

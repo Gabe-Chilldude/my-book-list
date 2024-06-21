@@ -11,7 +11,7 @@ class BookController extends Controller
         return view('books.books');
     }
 
-    public function shoBookRegister()  {
+    public function showBookRegister()  {
         return view('books.register');
     }
 
@@ -21,8 +21,7 @@ class BookController extends Controller
             'title' => ['required', 'max:255'],
             'sub_title' => ['required', 'max:255'],
             'issue' => ['required'],
-            'date' => ['required'],
-            'cover_url' => ['required', 'max:255']
+            'date' => ['required']
         ]);
 
         if($validate)  {
@@ -33,8 +32,9 @@ class BookController extends Controller
         $book->sub_title = $request->sub_title;
         $book->author = $request->author;
         $book->issue = $request->issue;
-        $book->date = $request->date_of_publish;
+        $book->date_of_publish = $request->date;
         $book->cover_url = $request->cover_url;
+        $book->user_id = $request->user_id;
 
         $book->save();
 
