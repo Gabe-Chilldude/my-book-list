@@ -25,3 +25,5 @@ Route::post('accounts/new', [UserController::class, 'addAccount']);
 Route::get('books/register', [BookController::class, 'showBookRegister']) ->middleware('auth');
 
 Route::post('books/new', [BookController::class, 'addBook']) ->middleware('auth');
+
+Route::post('books/delete', [BookController::class, 'removeBook']) ->middleware('auth');

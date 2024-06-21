@@ -56,7 +56,7 @@ class UserController extends Controller
 
         if(auth()->attempt($request->only(['email', 'password'])))  {
 
-            return redirect('books/show');
+            return redirect('/');
 
         }
 

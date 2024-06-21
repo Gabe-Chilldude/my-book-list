@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
     public function showBooks()  {
-        return view('books.books');
+        $books = DB::table('books')->where('user_id', Auth::id())->get();
+
+
+        return view('books.books', ['books' => $books]); 
     }
 
     public function showBookRegister()  {
@@ -45,4 +50,13 @@ class BookController extends Controller
         }
 
     }
+
+    public function removeBook(request $request)  {
+        $id = $request->id;
+
+        DB::table('books')->where('id', $id)->delete();
+
+        return redirect('/');
+    }
 }
+
