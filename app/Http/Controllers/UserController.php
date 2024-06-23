@@ -19,7 +19,7 @@ class UserController extends Controller
         $validate = $request->validate([
             'name' => ['required', 'max:255'],
             'email' => ['required','unique:App\Models\User','max:255'],
-            'password' => ['required','max:255']
+            'password' => ['required','max:255', 'min:6']
         ]);
 
         if($validate)  {
@@ -53,7 +53,7 @@ class UserController extends Controller
 
     public function authAccount(request $request)  {
 
-        validator($request->all(), ['email' => ['required', 'email'], 'password' => ['required']])->validate();
+        validator($request->all(), ['email' => ['required', 'email'], 'password' => ['required', 'max:255', 'min:6']])->validate();
 
         if(auth()->attempt($request->only(['email', 'password'])))  {
 

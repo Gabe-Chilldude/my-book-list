@@ -2,50 +2,42 @@
 
 @section('title', 'Login')
 
+@section('body_atrb', 'class=login')
+
 @section('content')
 
-<style>
 
-    body  {
-        margin:0px;
-        height:100vh;
-        display:flex;
-        align-items: center;
-        justify-content: center;
-    }
-    form {
-        height: 50vh;
-        flex-direction: column;
-        display:flex;
-        align-items: center;
-        justify-content: center;
-    }
+    <section class="body_container login">
+            @if ($errors->any())
+                <div>
 
-</style>
+                    <ul>
 
-@if ($errors->any())
-    <div>
+                        @foreach($errors->all() as $error)
+                            <li class="title" style="color:red;">{{ $error }}</li>
+                        @endforeach
 
-        <ul>
+                    </ul>
 
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
+                </div>
+            @endif
 
-        </ul>
+        <h1 class="title big">Vivlio</h1>
 
-    </div>
-@endif
+        <form class="form" action="/accounts/auth" method="POST">
+            @csrf
+            <label for="email" class="title">Email</label>
+            <input type="email" name="email" class="form_input">
+            
+            <label for="password" class="title">Senha</label>
+            <input type="password" name="password" class="form_input">
 
-<form action="/accounts/auth" method="POST">
-    @csrf
-    <label for="email">Email</label>
-    <input type="email" name="email">
-    
-    <label for="password">Senha</label>
-    <input type="password" name="password">
+            <div class="login_button">
+                <button type="submit" class="button">Entrar</button>
 
-    <input type="submit">
-</form>
+                <a href="/accounts/register" class="text">Ainda não possui conta?</a>
+            </div>
+        </form>
+    </section>
 
 @endsection

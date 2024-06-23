@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap');
+
+/* 
+    ? variáveis
+*/
+
+:root  {
+    --main-bg-color:#c4a87e;
+    --sec-bg-color:#dfcba3;
+
+    --main-btn-color:#c58423;
+    --sec-btn-color:#9a7031;
+
+    --btn-edit-color:#5adbb0;
+    --btn-delete-color:#DB3816;
+
+    --dark-txt-color:#35240b;
+    --light-txt-color:#fff0db;
+}
+
+
+/* 
+    ? Resets
+*/
+
+li {
+    list-style: none;
+    margin:0px;
+    padding: 0px;
+}
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+a {
+    text-decoration: none;
+}
+body {
+    margin: 0px;
+    background-color: var(--main-bg-color);
+}
+
+
+
+/*
+    ?  Inputs
+*/
+
+.form_input  {
+    border: none;
+    background-color: var(--light-txt-color);
+    height: 50px;
+    width: 70vw;
+    margin: 7.5px 0px;
+    font-size: 20px;
+}
+
+.button  {
+    border: none;
+    overflow: hidden;
+    background-color: var(--main-btn-color);
+    color: var(--light-txt-color);
+    height: 50px;
+    width: 200px;
+    margin: 10px 0px;
+    font-family: 'Pridi', serif;
+    font-weight: 300;
+    font-size: 15px;
+    transition: all ease-in-out .3s;
+}
+
+.secondary {
+    background-color: var(--sec-bg-color);
+}
+
+.button.edit:hover  {
+    background-color: var(--btn-edit-color);
+}
+
+.button.delete:hover  {
+    background-color: var(--btn-delete-color);
+}
+
+.book_form > .button  {
+    height: 60px;
+    width: 60px;
+    margin:0px 10px 0px 0px;
+}
+
+.button:hover  {
+    background-color: var(--sec-btn-color);
+}
+
+/* 
+    ? Containers
+*/
+
+section.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body_container  {
+    width: 80vw;
+    border-radius: 50px 50px 0px 0px;
+    background-color: var(--sec-bg-color);
+    box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.37) inset;
+    -webkit-box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.37) inset;
+    -moz-box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.37) inset;
+
+    padding: 50px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.body_container.login  {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.body_container.login.books  {
+    height: auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px;
+}
+
+.book_item  {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+div.book_info  {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column  ;
+}
+
+.books_section  {
+    background-color: #dfcba3;
+    display: flex;
+    width: 80vw;
+    padding: 60px 60px;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap ;
+    border-radius: 50px 50px 0px 0px;
+    box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.37) inset;
+    -webkit-box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.37) inset;
+    -moz-box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.37) inset;
+}
+
+section.banner  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 270px;
+}
+
+.pagination  {
+    display: flex;
+}
+
+.page-item  {
+    margin-right: 5px;
+}
+
+/* 
+    ? Texto/Mídia
+*/
+
+.text  {
+    color: var(--sec-btn-color);
+    font-family: 'Pridi', serif;
+}
+
+.text.link  {
+    text-decoration: underline;
+}
+
+.text.main_color  {
+    color: var(--dark-txt-color);
+}
+
+
+.title  {
+    color: var(--dark-txt-color);
+    font-size: 20px;
+    font-family: 'Caprasimo', serif;
+    font-weight: 400;
+}
+
+.user  {
+    font-family: 'Pridi';
+}
+
+.book_title  {
+    color: var(--dark-txt-color);
+    margin: 0px;
+    font-family: 'Pridi', serif;
+    font-weight: 700;
+}
+
+.book_sub_title  {
+    color: var(--dark-txt-color);
+    font-size: 18px;
+    margin: 6px 0px;
+    font-family: 'Pridi', serif;
+    font-weight: 500;
+}
+
+.book_cover  {
+    height: 240px;
+}
+
+.title.user {
+    margin: 0px 15px;
+}
+
+.title.big {
+    font-size: 50px;
+}
+
+.list_book  {
+    font-size: 100;
+}
+
+/* 
+    ? Outros
+*/
+
+body.login  {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login.books  {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+header.header {
+    height: 120px;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    padding: 0px 30px;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: all ease-in-out .3s;
+}
+
+header.header > h1.title  {
+    font-size: 40px;
+    transition: all ease-in-out .3s;
+}
+
+header.scroll_header > h1.title  {
+    font-size: 30px;
+}
+
+header.scroll_header  {
+    background-color: var(--sec-btn-color);
+    height: 80px;
+
+    * {
+        color: var(--light-txt-color);
+    }
+
+}
+
+.flex {
+    display: flex;
+}
+
+.login_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+}

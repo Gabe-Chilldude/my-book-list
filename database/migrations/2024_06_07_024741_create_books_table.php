@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('sub_title');
+            $table->string('sub_title')->nullable();
             $table->string('author');
             $table->integer('issue');
+            $table->string('publisher');
             $table->date('date_of_publish');
             $table->string('cover_url')->nullable();
             $table->foreignIdFor(\App\Models\User::class);

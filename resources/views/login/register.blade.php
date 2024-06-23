@@ -1,53 +1,45 @@
 @extends('parts.body')
 @section('title', 'Registro')
 
+@section('body_atrb',  'class=login')
+
 @section('content')
 
-<style>
-    body  {
-        margin:0px;
-        height:100vh;
-        display:flex;
-        align-items: center;
-        justify-content: center;
-    }
-    form {
-        height: 50vh;
-        flex-direction: column;
-        display:flex;
-        align-items: center;
-        justify-content: center;
-    }
+    <section class="body_container">
 
-</style>
+        @if ($errors->any())
+            <div>
 
-@if ($errors->any())
-    <div>
+                <ul>
 
-        <ul>
+                    @foreach($errors->all() as $error)
+                        <li class="title" style="color:red;">{{ $error }}</li>
+                    @endforeach
 
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
+                </ul>
 
-        </ul>
+            </div>
+        @endif
 
-    </div>
-@endif
+        <h1 class="title big">Vivlio</h1>
 
-<form action="/accounts/new" method="POST">
-    
-    @csrf
+        <form class="form" action="/accounts/new" method="POST">
+            @csrf
+            <label for="name" class="title">Nome de Usuário</label>
+            <input type="text" name="name" class="form_input">
+            
 
-    <label for="name">Nome</label>
-    <input type="text" name="name">
-    <label for="email">Email</label>
-    <input type="email" name="email">
-    <label for="password">Senha</label>
-    <input type="password" name="password">
+            <label for="email" class="title">Email</label>
+            <input type="email" name="email" class="form_input">
+            
+            <label for="password" class="title">Senha</label>
+            <input type="password" name="password" class="form_input">
 
-    <input type="submit">
-
-</form>
+            <div class="login_button">
+                <button type="submit" class="button">Entrar</button>
+                <a href="/accounts/login" class="text">Já possui conta?</a>
+            </div>
+        </form>
+    </section>
 
 @endsection
