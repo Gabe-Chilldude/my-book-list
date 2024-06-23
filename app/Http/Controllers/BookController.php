@@ -77,6 +77,7 @@ class BookController extends Controller
         $columns = [
             'title' => $request->title,
             'sub_title' => $request->sub_title,
+            'author' => $request->author,
             'issue' => $request->issue,
             'publisher' => $request->publisher,
             'date_of_publish' => $request->date,
