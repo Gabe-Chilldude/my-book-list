@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class BookController extends Controller
 {
     public function showBooks()  {
-        $books = DB::table('books')->where('user_id', Auth::id())->simplePaginate(2);
+        $books = DB::table('books')->where('user_id', Auth::id())->simplePaginate(15);
 
 
 
