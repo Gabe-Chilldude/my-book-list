@@ -191,6 +191,14 @@ section.banner  {
     text-decoration: underline;
 }
 
+.text.very_light  {
+    font-weight: 300;
+}
+
+a.text  {
+    margin-right:4px ;
+}
+
 .text.main_color  {
     color: var(--dark-txt-color);
 }
@@ -282,6 +290,10 @@ header.scroll_header  {
     height: 80px;
 
     * {
+        color: var(--light-txt-color);
+    }
+
+    .text.text.main_color {
         color: var(--light-txt-color);
     }
 

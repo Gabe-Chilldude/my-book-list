@@ -5,9 +5,9 @@
         <div class="flex">
             <h3 class="title user">{{Auth::user()->name}}</h3>
 
-            <ul class="flex">
-                <li><a href="/" class="book_sub_title">Livros</a>
-                <a href="/accounts/logout" class="book_sub_title">Sair</a></li>
+            <ul class="flex" style="align-items:center;">
+                <li><a href="/" class="text very_light main_color">Livros</a>
+                <a href="/accounts/logout" class="text very_light main_color">Sair</a></li>
             </ul>
         </div>
 </header>

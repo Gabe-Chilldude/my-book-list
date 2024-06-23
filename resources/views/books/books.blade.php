@@ -8,7 +8,7 @@
 <section class="body">
 
     <section class="banner">
-        <h1 class="title big">Adicione um a sua coleção</h1>
+        <h1 class="title big">Adicione um livro a sua coleção</h1>
         <a href="books/register"><button class="button main">+ Adicionar Livro</button></a>
     </section>
 
