@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <section class="body_container">
+    <section class="body_container login">
 
         @if ($errors->any())
             <div>
