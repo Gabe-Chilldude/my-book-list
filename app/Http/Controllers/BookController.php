@@ -98,9 +98,9 @@ class BookController extends Controller
             foreach($columns as $column=>$value) {
 
                 DB::table('books')->where('id', $request->id)->update([$column => $value]);
-                return redirect('/');
 
             }
+            return redirect('/');
         } else  {
             return redirect()->back()->withErrors(['title' => 'Campo Obrigatório']);
         }
