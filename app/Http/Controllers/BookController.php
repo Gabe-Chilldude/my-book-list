@@ -27,6 +27,7 @@ class BookController extends Controller
             'title' => ['required', 'max:255'],
             'sub_title' => ['nullable', 'max:255'],
             'issue' => ['required'],
+            'publisher' => ['required', 'max:255'],
             'date' => ['required'],
             'cover_url' => ['nullable', 'max:255']
         ]);
@@ -84,15 +85,26 @@ class BookController extends Controller
             'cover_url' => $request->cover_url
         ];
 
-        foreach($columns as $column=>$value) {
+        $validate = request()->validate([
+            'title' => ['required', 'max:255'],
+            'sub_title' => ['nullable', 'max:255'],
+            'issue' => ['required'],
+            'publisher' => ['required', 'max:255'],
+            'date' => ['required'],
+            'cover_url' => ['nullable', 'max:255']
+        ]);
 
-            if($value != null)  {
+        if($validate)  {
+            foreach($columns as $column=>$value) {
+
                 DB::table('books')->where('id', $request->id)->update([$column => $value]);
-            }
+                return redirect('/');
 
+            }
+        } else  {
+            return redirect()->back()->withErrors(['title' => 'Campo Obrigatório']);
         }
 
-        return redirect('/');
 
     }
 

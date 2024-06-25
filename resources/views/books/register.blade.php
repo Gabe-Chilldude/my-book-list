@@ -9,6 +9,21 @@
 <section class="login books">
 
     <section class="body_container login books">
+
+            @if ($errors->any())
+                <div>
+
+                    <ul>
+
+                        @foreach($errors->all() as $error)
+                            <li class="title" style="color:red;">{{ $error }}</li>
+                        @endforeach
+
+                    </ul>
+
+                </div>
+            @endif
+
         <h1 class="title big">Adicionar novo livro</h1>
 
         <form action="/books/new" class="form" method="POST">
